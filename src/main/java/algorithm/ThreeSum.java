@@ -25,6 +25,7 @@ import java.util.*;
 public class ThreeSum {
     /**
      * 排序然后两边往中间夹 再去重
+     *
      * @param nums
      * @return
      */
@@ -71,5 +72,56 @@ public class ThreeSum {
             results.add(c);
         }
         return results;
+    }
+
+    /**
+     * 论坛优化版
+     *
+     * @param nums
+     * @return
+     */
+    public List<List<Integer>> threeSum2(int[] nums) {
+
+        if (nums == null || nums.length == 0) {
+            return Collections.emptyList();
+        }
+
+        Arrays.sort(nums);
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        for (int i = 0; i < nums.length - 2; i++) {
+            int j = i + 1;
+
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+
+            int k = nums.length - 1;
+
+            while (j < k) {
+                if (k < nums.length - 1 && nums[k] == nums[k + 1]) {
+                    k--;
+                    continue;
+                }
+                if (nums[i] + nums[j] + nums[k] == 0) {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(nums[i]);
+                    list.add(nums[j]);
+                    list.add(nums[k]);
+                    result.add(list);
+
+                    j++;
+                    k--;
+                } else if (nums[i] + nums[j] + nums[k] < 0) {
+                    j++;
+                } else {
+                    k--;
+                }
+            }
+        }
+
+        return result;
+
     }
 }
