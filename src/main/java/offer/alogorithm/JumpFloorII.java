@@ -27,8 +27,24 @@ public class JumpFloorII {
         return result[target-1];
     }
 
+    /**
+     * f(n)=f(n-1)+f(n-2)+...+f(1)
+     * f(n-1)=f(n-2)+...f(1)
+     * 得:f(n)=2*f(n-1)
+     * f(n)=2^1*f(n-2)
+     * ……
+     * 最后
+     * f（n）=2^(n-1)
+     * @param target
+     * @return
+     */
+    public int JumpFloorII2(int target) {
+        //1左移动target-1位，即2^(n-1)
+        return 1<<(target-1);
+        //return (int)Math.pow(2,target-1);
+    }
     public static void main(String[] args) {
         JumpFloorII jumpFloorII=new JumpFloorII();
-        System.out.println(jumpFloorII.JumpFloorII(1));
+        System.out.println(jumpFloorII.JumpFloorII2(4));
     }
 }
