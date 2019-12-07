@@ -92,7 +92,7 @@ public class ThreeSum {
 
         for (int i = 0; i < nums.length - 2; i++) {
             int j = i + 1;
-
+            //去重
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
@@ -100,6 +100,7 @@ public class ThreeSum {
             int k = nums.length - 1;
 
             while (j < k) {
+                //去重
                 if (k < nums.length - 1 && nums[k] == nums[k + 1]) {
                     k--;
                     continue;

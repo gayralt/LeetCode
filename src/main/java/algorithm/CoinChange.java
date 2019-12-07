@@ -3,7 +3,9 @@ package main.java.algorithm;
 import java.util.Arrays;
 
 /**
- * You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+ * You are given coins of different denominations and a total amount of money amount.
+ * Write a function to compute the fewest number of coins that you need to make up that amount.
+ * If that amount of money cannot be made up by any combination of the coins, return -1.
  * <p>
  * Example 1:
  * <p>
@@ -31,5 +33,9 @@ public class CoinChange {
             }
         }
         return dp[amount] > amount ? -1 : dp[amount];
+    }
+    public static void main(String[] args) {
+        CoinChange coinChange=new CoinChange();
+        coinChange.coinChange(new int[]{1,2,5},11);
     }
 }

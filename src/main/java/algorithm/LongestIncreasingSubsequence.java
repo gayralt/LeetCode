@@ -42,4 +42,26 @@ public class LongestIncreasingSubsequence {
         }
         return result;
     }
+    public int lengthOfLIS2(int[] nums) {
+        int[] tails = new int[nums.length];
+        int res = 0;
+        for(int num : nums) {
+            int i = 0, j = res;
+            //二分查找tail位置
+            while(i < j) {
+                int m = (i + j) / 2;
+                if(tails[m] < num) i = m + 1;
+                else j = m;
+            }
+            //插入tail
+            tails[i] = num;
+            //等于尾节点 结果+1
+            if(res == j) res++;
+        }
+        return res;
+    }
+    public static void main(String[] args) {
+        LongestIncreasingSubsequence subsequence=new LongestIncreasingSubsequence();
+        subsequence.lengthOfLIS(new int[]{1,3,6,7,9,4,10,5,6});
+    }
 }
