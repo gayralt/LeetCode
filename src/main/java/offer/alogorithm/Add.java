@@ -18,6 +18,6 @@ public class Add {
     }
 
     public static void main(String[] args) {
-        Add(3,2);
+        Add(3,-2);
     }
 }
