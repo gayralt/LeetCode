@@ -1,5 +1,7 @@
 package main.java.offer.alogorithm;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 public class Fibonacci {
     public int fibonacci(int n) {
         if (n <= 0)
@@ -34,6 +36,6 @@ public class Fibonacci {
     }
     public static void main(String[] args) {
         Fibonacci fibonacci=new Fibonacci();
-        System.out.println(fibonacci.fibonacci2(6));
+        System.out.println(fibonacci.fibonacci(45));
     }
 }

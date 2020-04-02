@@ -24,14 +24,14 @@ public class NumberOf1Between1AndN_Solution {
     public int numberOf1Between1AndN_Solution(int n) {
         int ones = 0;
         for (int m = 1; m <= n; m *= 10) {
-            //分成两部分
+            //分成两部分 a是当前位，b是上一位
             int a = n/m, b = n%m;
             //当前位为0 仅计算前半部分
             if(a%10 == 0)
                 ones += a / 10 * m;
-            //当前位为1 还需加上0~b时当前位的1
+            //当前位为1 还需加上 上一位0~b的1
             else if(a%10 == 1)
-                ones += (a/10*m) + (b+1);
+                ones += (a/10*m) + (b+1);//b个1开头的数+11多的一个1
             //当前位>1 加上当前位1~2时10^(a/10)个数
             else
                 ones += (a/10+1)* m;
@@ -41,6 +41,6 @@ public class NumberOf1Between1AndN_Solution {
 
     public static void main(String[] args) {
         NumberOf1Between1AndN_Solution solution=new NumberOf1Between1AndN_Solution();
-        solution.numberOf1Between1AndN_Solution(100);
+        solution.numberOf1Between1AndN_Solution(12);
     }
 }

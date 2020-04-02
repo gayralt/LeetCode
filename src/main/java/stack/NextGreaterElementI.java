@@ -11,7 +11,7 @@ import java.util.Stack;
  * The Next Greater Number of a number x in nums1 is the first greater number to its right in nums2.
  * If it does not exist, output -1 for this number.
  *
- *您将得到两个数组（不带重复项）nums1和nums2，其中nums1的元素是nums2的子集。
+ * 您将得到两个数组（不带重复项）nums1和nums2，其中nums1的元素是nums2的子集。
  * 在nums2的相应位置中查找nums1元素的所有下一个更大的数字。
  * 数字x在nums1中的下一个较大数字是在nums2中右边的第一个较大数字。
  * 如果它不存在，则为此数字输出-1。

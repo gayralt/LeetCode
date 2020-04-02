@@ -1,5 +1,7 @@
 package main.java.offer.LinkList;
 
+import java.util.LinkedList;
+
 public class ListNode {
     int val;
     ListNode next = null;
@@ -7,5 +9,4 @@ public class ListNode {
     ListNode(int val) {
         this.val = val;
     }
-
 }

@@ -14,12 +14,12 @@ public class IsNumeric {
         int index=this.isInteger(str,0);
 
         //检查小数
-        if (index>=0&&index<str.length&&str[index]=='.'){
+        if (index>0&&index<str.length&&str[index]=='.'){
             index=this.isNumber(str,index+1);
         }
 
         //检查指数
-        if (index>=0&&index<str.length&&(str[index]=='e'||str[index]=='E')){
+        if (index>0&&index<str.length&&(str[index]=='e'||str[index]=='E')){
             index=this.isInteger(str,index+1);
         }
         return index==str.length;
@@ -35,7 +35,7 @@ public class IsNumeric {
         if (index==str.length)
         return -1;
         //检查数字
-        while (index>=0&&index<str.length&&str[index]-'0'>=0&&str[index]-'0'<=9){
+        while (index>=0&&index<str.length&&str[index]>='0'&&str[index]<='9'){
             index++;
         }
         return index;
@@ -43,6 +43,6 @@ public class IsNumeric {
 
     public static void main(String[] args) {
         IsNumeric numeric=new IsNumeric();
-        System.out.print(numeric.isNumeric((new String("1.")).toCharArray()));
+        System.out.print(numeric.isNumeric((new String("1 ")).toCharArray()));
     }
 }

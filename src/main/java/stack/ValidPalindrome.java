@@ -1,5 +1,6 @@
 package main.java.stack;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -19,6 +20,7 @@ import java.util.LinkedList;
 public class ValidPalindrome {
     public boolean isPalindrome(String s) {
         LinkedList<Character> linkedList=new LinkedList<>();
+        LinkedList<Character> linkedList2=new LinkedList<>();
         return false;
     }
 }

@@ -45,6 +45,7 @@ public class SerializeTwoTree {
         node.left.right.left=new TreeNode(4);
         node.left.right.right=new TreeNode(7);
         String serialize=twoTree.Serialize(node);
+        System.out.println(serialize);
         TreeNode root=twoTree.Deserialize("8,6,10,5,7,9,11");
         System.out.println(root);
     }
